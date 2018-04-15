@@ -4,6 +4,8 @@ interface NodeModule {
   id: string;
 }
 
+//USDA Response Objects
+
 interface SearchResponse {
   list: SearchResponseList
 }
@@ -28,6 +30,53 @@ interface SearchResponseItem {
   ds: string;
 }
 
+interface ReportResponse {
+  foods: ReportResponseFoodContainer[];
+  count: number;
+  notfound: number;
+  api: number
+}
+
+interface ReportResponseFoodContainer {
+  food: ReportResponseFood;
+}
+
+interface ReportResponseFood {
+  sr: string;
+  type: string;
+  desc: ReportResponseFoodDesc;
+  nutrients: ReportResponseFoodNutrient[];
+  footnotes: {idv: string, desc: string}[];
+}
+
+interface ReportResponseFoodDesc {
+  ndbno: string;
+  name: string;
+  ds: string;
+  manu: string;
+  ru: string;
+}
+
+interface ReportResponseFoodNutrient {
+  nutrient_id: string;
+  name: string;
+  derivation: string;
+  group: string;
+  unit: string;
+  value: string;
+  measures: ReportResponseFoodNutrientMeasure[]
+}
+
+interface ReportResponseFoodNutrientMeasure {
+  label: string;
+  eqv: number;
+  eunit: string;
+  qty: number;
+  value: string;
+}
+
+// Application DTOs
+
 interface SearchResult {
   start: number;
   end: number;
@@ -44,4 +93,18 @@ interface FoodItem {
 interface PageDetail {
   pageNumber: number;
   topItemOffset: number;
+}
+
+interface FoodReport {
+  ndbno: string;
+  name: string;
+  foodNutrients: FoodNutrient[];
+}
+
+interface FoodNutrient {
+  nutrientId: string;
+  name: string;
+  group: string;
+  unit: string;
+  value: string;
 }

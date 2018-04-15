@@ -1,2 +1,6 @@
-<div>details-page</div>
-<app-nutrition-info></app-nutrition-info>
+<div>Name: {{foodReport.name}}</div>
+<div>NDB No: {{foodReport.ndbno}}</div>
+<hr />
+<app-nutrition-info
+        [foodNutrients]="foodReport.foodNutrients"
+></app-nutrition-info>

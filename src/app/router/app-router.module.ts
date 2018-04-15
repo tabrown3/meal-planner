@@ -7,7 +7,7 @@ import {SearchPageComponent} from "../search-page/search-page.component";
 
 const routes: Routes = [
   {path: 'shopping-list', component: ShoppingListPageComponent},
-  {path: 'food-details/:id', component: DetailsPageComponent},
+  {path: 'food-details/:ndbno', component: DetailsPageComponent},
   {path: '', pathMatch: 'full', component: SearchPageComponent},
   {path: '**', redirectTo: ''}
 ];
