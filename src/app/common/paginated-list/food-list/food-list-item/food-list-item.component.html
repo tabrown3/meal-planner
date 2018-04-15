@@ -1,1 +1,13 @@
-<div>food-list-item</div>
+<ul>
+    <div>
+        Name: {{item.name}}
+    </div>
+    <div>
+        Food Group: {{item.foodGroup}}
+    </div>
+    <div>
+        NDB ID: {{item.ndbno}}
+    </div>
+    <a [routerLink]="['food-details', item.ndbno]">Details</a>
+    <button (click)="itemButtonClicked(item)">Add</button>
+</ul>

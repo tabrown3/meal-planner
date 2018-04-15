@@ -1,2 +1,7 @@
-<div>food-list</div>
-<app-food-list-item></app-food-list-item>
+<ul>
+    <app-food-list-item
+            *ngFor="let item of items"
+            [item]="item"
+            (itemSelected)="itemSelected($event)"
+    ></app-food-list-item>
+</ul>

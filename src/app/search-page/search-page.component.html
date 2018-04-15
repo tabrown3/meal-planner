@@ -1,3 +1,10 @@
-<div>search-page</div>
-<app-search-box></app-search-box>
-<app-paginated-list></app-paginated-list>
+<app-search-box
+        (onSearch)="onSearch($event)"
+></app-search-box>
+<app-paginated-list
+        [list]="items"
+        [pageSize]="25"
+        [totalItems$]="totalItems$"
+        (onPageChange)="onPageChange($event)"
+        (onItemSelected)="onItemSelected($event)"
+></app-paginated-list>

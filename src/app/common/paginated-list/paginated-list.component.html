@@ -1,3 +1,9 @@
-<div>paginated-list</div>
-<app-food-list></app-food-list>
-<app-pagination-controls></app-pagination-controls>
+<app-food-list
+        [items]="list"
+        (onItemSelected)="itemSelected($event)"
+></app-food-list>
+<app-pagination-controls
+        [pageSize]="pageSize"
+        [totalItems$]="totalItems$"
+        (onPageChange)="pageChange($event)"
+></app-pagination-controls>

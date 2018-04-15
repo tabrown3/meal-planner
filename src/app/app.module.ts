@@ -13,6 +13,10 @@ import { FoodListItemComponent } from './common/paginated-list/food-list/food-li
 import {AppRouterModule} from "./router/app-router.module";
 import { SearchBoxComponent } from './search-page/search-box/search-box.component';
 import { NutritionInfoComponent } from './common/nutrition-info/nutrition-info.component';
+import {FoodSearchService} from "./food-search.service";
+import {MealPlannerService} from "./meal-planner.service";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -31,9 +35,14 @@ import { NutritionInfoComponent } from './common/nutrition-info/nutrition-info.c
   ],
   imports: [
     BrowserModule,
-    AppRouterModule
+    AppRouterModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    MealPlannerService,
+    FoodSearchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

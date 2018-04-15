@@ -1,1 +1,9 @@
-<div>search-box</div>
+<label>
+    Enter search terms:
+    <input
+            id="search-box-input"
+            type="text"
+            [(ngModel)]="searchText"
+    />
+</label>
+<button (click)="searchClicked()">Search!</button>

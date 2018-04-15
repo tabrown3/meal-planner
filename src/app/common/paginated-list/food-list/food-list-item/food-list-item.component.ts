@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-food-list-item',
@@ -9,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodListItemComponent implements OnInit {
 
+  @Input()item: FoodItem;
+  @Output()itemSelected = new EventEmitter<FoodItem>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  itemButtonClicked(item: FoodItem) {
+    this.itemSelected.emit(item);
+  }
 }
