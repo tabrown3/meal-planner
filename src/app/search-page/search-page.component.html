@@ -4,7 +4,7 @@
 <a routerLink="shopping-list">To Shopping List</a>
 <app-paginated-list
         [list]="items"
-        [pageSize]="25"
+        [pageSize]="pageSize"
         [totalItems$]="totalItems$"
         buttonLabel="Add"
         (onPageChange)="onPageChange($event)"

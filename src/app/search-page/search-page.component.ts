@@ -18,6 +18,7 @@ export class SearchPageComponent implements OnInit {
   //  the total number of items has changed and what the new value is
   totalItems$ = new BehaviorSubject<number>(0);
   searchText = 'whole milk';
+  pageSize = 15;
 
   constructor(private mealPlannerService: MealPlannerService, private foodSearchService: FoodSearchService) { }
 
@@ -26,7 +27,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   onPageChange(pageDetail: PageDetail) {
-    this.foodSearchService.getFoodList(this.searchText, pageDetail.topItemOffset).subscribe(result => {
+    this.foodSearchService.getFoodList(this.searchText, pageDetail.topItemOffset, this.pageSize).subscribe(result => {
       this.items = result.items;
     });
   }
@@ -42,7 +43,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   private performFoodSearch() {
-    this.foodSearchService.getFoodList(this.searchText, 0).subscribe(result => {
+    this.foodSearchService.getFoodList(this.searchText, 0, this.pageSize).subscribe(result => {
       this.items = result.items;
       this.totalItems$.next(result.total);
     });
