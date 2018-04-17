@@ -9,5 +9,5 @@
         NDB ID: {{item.ndbno}}
     </div>
     <a [routerLink]="['food-details', item.ndbno]">Details</a>
-    <button (click)="itemButtonClicked(item)">Add</button>
+    <button (click)="itemButtonClicked(item)">{{buttonLabel}}</button>
 </li>

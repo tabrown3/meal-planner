@@ -2,6 +2,7 @@
     <app-food-list-item
             *ngFor="let item of items"
             [item]="item"
+            [buttonLabel]="buttonLabel"
             (itemSelected)="itemSelected($event)"
     ></app-food-list-item>
 </ul>

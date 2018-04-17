@@ -6,6 +6,7 @@
         [list]="items"
         [pageSize]="25"
         [totalItems$]="totalItems$"
+        buttonLabel="Add"
         (onPageChange)="onPageChange($event)"
         (onItemSelected)="onItemSelected($event)"
 ></app-paginated-list>

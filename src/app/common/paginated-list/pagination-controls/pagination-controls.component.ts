@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Subject} from "rxjs/Subject";
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
   selector: 'app-pagination-controls',
@@ -11,7 +12,7 @@ import {Subject} from "rxjs/Subject";
 export class PaginationControlsComponent implements OnInit {
 
   @Input()pageSize: number;
-  @Input()totalItems$: Subject<number>;
+  @Input()totalItems$: BehaviorSubject<number>;
   @Output()onPageChange = new EventEmitter<PageDetail>();
 
   currentPage = 1;
@@ -22,6 +23,12 @@ export class PaginationControlsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    if(this.totalItems$.getValue()) {
+      this.currentPage = 1;
+      this.lastPage = Math.ceil(this.totalItems$.getValue() / this.pageSize);
+      this.initialized = true;
+    }
 
     this.totalItems$.subscribe(totalItems => {
       this.currentPage = 1;

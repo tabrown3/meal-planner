@@ -1,3 +1,11 @@
 <div>shopping-list-page</div>
-<app-paginated-list></app-paginated-list>
+<app-paginated-list
+    [list]="items"
+    [pageSize]="25"
+    [totalItems$]="totalItems$"
+    buttonLabel="Remove"
+    (onItemSelected)="onItemSelected($event)"
+></app-paginated-list>
+<!-- (onPageChange)="onPageChange($event)" -->
+
 <app-nutrition-info [foodNutrients]="totaledNutrientsList"></app-nutrition-info>

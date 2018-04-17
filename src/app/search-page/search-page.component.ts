@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MealPlannerService} from "../meal-planner.service";
 import {FoodSearchService} from "../food-search.service";
 import {Subject} from "rxjs/Subject";
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
   selector: 'app-search-page',
@@ -15,7 +16,7 @@ export class SearchPageComponent implements OnInit {
   items: FoodItem[];
   // Subject to be passed to paginated list so the list knows when
   //  the total number of items has changed and what the new value is
-  totalItems$ = new Subject<number>();
+  totalItems$ = new BehaviorSubject<number>(0);
   searchText = 'whole milk';
 
   constructor(private mealPlannerService: MealPlannerService, private foodSearchService: FoodSearchService) { }
