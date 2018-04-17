@@ -14,4 +14,9 @@ export class MealPlannerService {
       this.shoppingCart.push(foodItem);
     }
   }
+
+  getShoppingCartItems() {
+
+    return [...this.shoppingCart];
+  }
 }

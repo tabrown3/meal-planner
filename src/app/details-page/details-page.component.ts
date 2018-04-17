@@ -24,7 +24,7 @@ export class DetailsPageComponent implements OnInit {
       ]).subscribe(foodReports => {
 
         this.foodReport = foodReports[0]; // only one on details page
-      })
+      });
     });
   }
 
