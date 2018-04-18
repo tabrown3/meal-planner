@@ -1,28 +1,15 @@
 <div>
-    <button (click)="itemButtonClicked(item)">
-        <div>
-            <b>Name: </b> {{item.name}}
-        </div>
-        <div>
-            <b>Food Group: </b> {{item.foodGroup}}
-        </div>
-        <div>
-            <b>NDB ID:</b>{{item.ndbno}}
-        </div>
-    </button>
-    <div>
+    <p>
+        <b>Name: </b> {{item.name}}
+    </p>
+    <p>
+        <b>Food Group: </b> {{item.foodGroup}}
+    </p>
+    <p>
+        <b>NDB ID:</b>{{item.ndbno}}
+    </p>
+    <p>
         <a [routerLink]="['food-details', item.ndbno]">Details</a>
-    </div>
-<<<<<<< HEAD
+        <button (click)="itemButtonClicked(item)">{{buttonLabel}}</button>
+    </p>
 </div>
-=======
-    <div>
-        Food Group: {{item.foodGroup}}
-    </div>
-    <div>
-        NDB ID: {{item.ndbno}}
-    </div>
-    <a [routerLink]="['food-details', item.ndbno]">Details</a>
-    <button (click)="itemButtonClicked(item)">{{buttonLabel}}</button>
-</li>
->>>>>>> 57efd26d4d5b40a47138e676937cf7e3506d776b

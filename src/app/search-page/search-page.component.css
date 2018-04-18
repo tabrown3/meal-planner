@@ -1,0 +1,16 @@
+div{
+    align-content: center;
+}
+
+a {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2px;
+    align-content: center;
+    text-align: center;
+    color: #012005;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+}

@@ -1,0 +1,20 @@
+div {
+    color: #012005;
+    padding: 2px;
+    font-size: 1em;
+    margin-top: 3px;
+    font-weight: bold;
+}
+
+button {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2px;
+    align-content: center;
+    text-align: center;
+    color: #bbffc3;
+    background-color: #0120056b;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-width: 0px;
+}

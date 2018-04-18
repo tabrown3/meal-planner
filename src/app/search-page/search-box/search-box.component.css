@@ -1,0 +1,25 @@
+label{
+    color: #012005;
+    border-width: 5px;
+    padding: 2px;
+    font-size: 1em;
+    margin-top: 3px;
+}
+
+b {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+button {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2px;
+    align-content: center;
+    text-align: center;
+    color: #012005;
+    background-color: #01200500;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-width: 0px;
+}

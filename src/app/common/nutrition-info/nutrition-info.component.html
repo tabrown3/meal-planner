@@ -1,9 +1,11 @@
-<ul>
-    <li *ngFor="let nutrient of foodNutrients">
-        <div>Nutrient: {{nutrient.name}}</div>
-        <div>Id: {{nutrient.nutrientId}}</div>
-        <div>Group: {{nutrient.group}}</div>
-        <div>Unit: {{nutrient.unit}}</div>
-        <div>Value: {{nutrient.value}}</div>
-    </li>
-</ul>
+<div class="row">
+    <div *ngFor="let nutrient of foodNutrients" class="col-md-3 col-sm-4 col-xs-6">
+        <div id="style">
+            <p><b>Nutrient:</b> {{nutrient.name}}</p>
+            <p><b>Id:</b> {{nutrient.nutrientId}}</p>
+            <p><b>Group:</b> {{nutrient.group}}</p>
+            <p><b>Unit:</b> {{nutrient.unit}}</p>
+            <p><b>Value:</b> {{nutrient.value}}</p>
+        </div>
+    </div>
+</div>

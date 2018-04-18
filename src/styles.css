@@ -1,3 +1,11 @@
 * {
     font-family: Helvetica, sans-serif;
+    align-content: center;
+}
+
+body{
+    background-image: url("groc.jpg");
+    bottom: 0px;
+    background-attachment: fixed;
+    width: 100%;
 }

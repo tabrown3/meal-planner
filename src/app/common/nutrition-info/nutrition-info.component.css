@@ -1,0 +1,25 @@
+#style {
+    height: 10em;
+    color: #e7ffea;
+    background-color: #0120056b;
+    border-color: #000000;
+    border-left-color: #003a09;
+    border-right-color: #003a09;
+    border-width: 5px;
+    padding: 2px;
+    font-size: 1em;
+    margin: 5px;
+}
+
+p {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2px;
+    align-content: center;
+    text-align: center;
+}
+
+b {
+    font-size: 1.1em;
+    font-weight: bold;
+}

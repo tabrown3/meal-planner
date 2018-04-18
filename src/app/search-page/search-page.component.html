@@ -1,14 +1,12 @@
+<div>
 <app-search-box
         (onSearch)="onSearch($event)"
 ></app-search-box>
 <a routerLink="shopping-list">To Shopping List</a>
+</div>
 <app-paginated-list
         [list]="items"
-<<<<<<< HEAD
-        [pageSize]="3"
-=======
         [pageSize]="pageSize"
->>>>>>> 57efd26d4d5b40a47138e676937cf7e3506d776b
         [totalItems$]="totalItems$"
         buttonLabel="Add"
         (onPageChange)="onPageChange($event)"
