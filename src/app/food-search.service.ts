@@ -27,13 +27,13 @@ export class FoodSearchService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getFoodList = (searchQuery: string, offset: number): Observable<SearchResult> => {
+  getFoodList = (searchQuery: string, offset: number, max: number): Observable<SearchResult> => {
 
     let params = new HttpParams();
     params = params.append(this.PARAM_API_KEY, this.API_KEY);
     params = params.append(this.PARAM_FORMAT, this.FORMAT);
     params = params.append(this.PARAM_QUERY, searchQuery);
-    params = params.append(this.PARAM_MAX, '25');
+    params = params.append(this.PARAM_MAX, max.toString());
     params = params.append(this.PARAM_OFFSET, offset.toString());
 
     return this.httpClient.get(this.FOOD_SEARCH_URL, {

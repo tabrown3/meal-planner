@@ -13,4 +13,16 @@
     <div>
         <a [routerLink]="['food-details', item.ndbno]">Details</a>
     </div>
+<<<<<<< HEAD
 </div>
+=======
+    <div>
+        Food Group: {{item.foodGroup}}
+    </div>
+    <div>
+        NDB ID: {{item.ndbno}}
+    </div>
+    <a [routerLink]="['food-details', item.ndbno]">Details</a>
+    <button (click)="itemButtonClicked(item)">{{buttonLabel}}</button>
+</li>
+>>>>>>> 57efd26d4d5b40a47138e676937cf7e3506d776b

@@ -2,6 +2,7 @@
     <div *ngFor="let item of items; let i = index" class="col-md-4">
         <app-food-list-item 
             [item]="item"
+            [buttonLabel]="buttonLabel"
             (itemSelected)="itemSelected($event)"
         ></app-food-list-item>
     </div>

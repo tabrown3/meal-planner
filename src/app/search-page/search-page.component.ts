@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MealPlannerService} from "../meal-planner.service";
 import {FoodSearchService} from "../food-search.service";
 import {Subject} from "rxjs/Subject";
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
   selector: 'app-search-page',
@@ -15,8 +16,9 @@ export class SearchPageComponent implements OnInit {
   items: FoodItem[];
   // Subject to be passed to paginated list so the list knows when
   //  the total number of items has changed and what the new value is
-  totalItems$ = new Subject<number>();
+  totalItems$ = new BehaviorSubject<number>(0);
   searchText = 'whole milk';
+  pageSize = 15;
 
   constructor(private mealPlannerService: MealPlannerService, private foodSearchService: FoodSearchService) { }
 
@@ -25,7 +27,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   onPageChange(pageDetail: PageDetail) {
-    this.foodSearchService.getFoodList(this.searchText, pageDetail.topItemOffset).subscribe(result => {
+    this.foodSearchService.getFoodList(this.searchText, pageDetail.topItemOffset, this.pageSize).subscribe(result => {
       this.items = result.items;
     });
   }
@@ -41,7 +43,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   private performFoodSearch() {
-    this.foodSearchService.getFoodList(this.searchText, 0).subscribe(result => {
+    this.foodSearchService.getFoodList(this.searchText, 0, this.pageSize).subscribe(result => {
       this.items = result.items;
       this.totalItems$.next(result.total);
     });

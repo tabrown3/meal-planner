@@ -10,6 +10,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class FoodListComponent implements OnInit {
 
   @Input()items: FoodItem;
+  @Input()buttonLabel: string;
   @Output()onItemSelected = new EventEmitter<FoodItem>();
 
   constructor() { }

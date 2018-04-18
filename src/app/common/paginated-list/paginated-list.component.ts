@@ -16,6 +16,7 @@ export class PaginatedListComponent implements OnInit {
   // for <pagination-control>
   @Input()pageSize: number;
   @Input()totalItems$: Subject<number>;
+  @Input()buttonLabel: string;
   @Output()onPageChange = new EventEmitter<PageDetail>();
   @Output()onItemSelected = new EventEmitter<FoodItem>();
 
