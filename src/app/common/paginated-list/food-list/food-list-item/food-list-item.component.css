@@ -1,0 +1,23 @@
+button{
+    width: 94%;
+    height: 10em;
+    color: #411b2b;
+    background-color: #ff8a9a;
+    border-color: #6b2c46;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 1em;
+    margin-top: 3px;
+}
+
+div, a {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2px;
+    align-content: center;
+    text-align: center;
+}
+
+b {
+    font-size: 1.1em;
+}

@@ -1,7 +1,8 @@
-<ul>
-    <app-food-list-item
-            *ngFor="let item of items"
+<div class="row">
+    <div *ngFor="let item of items; let i = index" class="col-md-4">
+        <app-food-list-item 
             [item]="item"
             (itemSelected)="itemSelected($event)"
-    ></app-food-list-item>
-</ul>
+        ></app-food-list-item>
+    </div>
+</div>
